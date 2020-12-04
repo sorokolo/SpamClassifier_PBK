@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+   *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+    body{
+      font-family:  "Gill Sans", "Gill Sans MT", Calibri, Trebuchet MS, sans-serif;
+      font-weight: 100;
+      font-size:  20px;
+      {#line-break: 30px;#}
+      color: #777;
+      background: linear-gradient(to right,#dce35b,#45be);
+    }
+
+    .container {
+      max-width: 400px;
+      width:  100%;
+      margin:0 auto;
+      position: relative;
+    }
+
+    #model_predictor  {
+      background:#f9f9f9;
+      padding:  25px;
+      margin: 150px 0;
+      box-shadow: 0 0 20px 0 rgba(0,0,0,0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+      border-radius: 10px;
+    }
+
+    #model_predictor h1{
+      display:  block;
+      font-size:  30px;
+      font-weight:  300;
+      margin-bottom:  10px;
+    }
+
+    #model_predictor h2{
+      margin: 5px 0 15px;
+      display:  block;
+      font-size:  20px;
+      {#font-weight:  40px;#}
+    }
+
+    .results{
+      border:0;
+      margin:0 0 10px
+      min-width: 100%;
+      padding:5px;
+      width: 100%;
+      outline:  none;
+    }
+
+</style>
+<head>
+
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Prediction Results</title>
+</head>
+<body>
+
+<div class="container">
+    <div id="model_predictor"  >
+        <h1>Prediction Results</h1>
+
+
+        <div class="results">
+             <h2>Results of text-input</h2>
+            {% if prediction == 1%}
+            <h2 style="color:red;">The message is Spam</h2>
+            {% elif prediction == 0%}
+            <h2 style="color:blue;">The message is not a Spam (It is a Ham)</h2>
+            {% endif %}
+
+	    </div>
+
+
+    </div>
+</div>
+
+</body>
+</html>
